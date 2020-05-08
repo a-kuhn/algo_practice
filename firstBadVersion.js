@@ -18,6 +18,8 @@ var solution = function(isBadVersion) {
      * @return {integer} The first bad version
      */
     return function(n) {
+        //could refactor by calling n/2 until !isBadVersion, then n++ until isBadVersion again
+        //this refactor could result in far fewer api calls if # of versions is high and firstBadVersion happened early in product development
         while (isBadVersion(n-1)){
             n--;
         }
