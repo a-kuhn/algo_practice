@@ -9,17 +9,24 @@ class Store:
 
     def sell_product(self, id):
         sold_product = self.products.pop(id)
+        print(">>> SELLING...")
         sold_product.print_info()
         return sold_product
 
     def inflation(self, percent_increase):
         # increase price of each product
-        self.products = [p.update_price(percent_increase) for p in self.products]
+        self.products = [p.update_price(percent_increase, True) for p in self.products]
         return self
 
     def set_clearance(self, category, percent_discount):
         #update all products in given category with clearance price
-        self.products = [p.update_price(percent_discount) for p in self.products if p.category == category]
+        [p.update_price(percent_discount, False) for p in self.products if p.category == category]
+        return self
+
+    def print_products(self):
+        print(f"\n\n**********\n{self.name} currently has:\n")
+        for p in self.products:
+            p.print_info() 
         return self
 
 class Product:
@@ -29,14 +36,38 @@ class Product:
         self.category = category
     
     def update_price(self, percent_change, is_increased):
-        # if is_increased:
-        #     self.price += self.price*percent_change
-        # else:
-        #     self.price -= self.price*percent_change
-        # attempt at using ternary operator:
-        self.price += self.price*percent_change if is_increased else self.price -= self.price*percent_change
+        if is_increased:
+            self.price += self.price*percent_change
+        else:
+            self.price -= self.price*percent_change
         return self
 
     def print_info(self):
-        print(f"Product name: {self.name} \nCategory: {self.category} \nPrice: {self.price}")
+        print(f"Product name: {self.name} \nCategory: {self.category} \nPrice: {self.price}\n")
         return self
+
+store1 = Store("store1")
+
+iPhone = Product("iPhone", 950, "electronics")
+iPhone.print_info()
+iPhone.update_price(.25, True)
+iPhone.print_info()
+
+sGalaxy = Product("Galaxy", 600, "electronics")
+
+chair = Product("Desk chair", 100, "furniture")
+
+store1.add_product(iPhone)
+store1.add_product(sGalaxy)
+store1.add_product(chair)
+
+store1.print_products()
+
+store1.inflation(.1)
+store1.print_products()
+
+store1.set_clearance("electronics", .1)
+store1.print_products()
+
+store1.sell_product(1)
+store1.print_products()
