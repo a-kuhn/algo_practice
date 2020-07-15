@@ -146,7 +146,19 @@ class coinsTests(unittest.TestCase):
         self.assertEqual(coins(4), [0,0,0,4])
 
 
+def factorial(num):
+    pass
 
+class factorialTests(unittest.TestCase):
+    def testOne(self):
+        self.assertEqual(factorial(5), 120)
+
+def fibonacci(num):
+    pass
+
+class fibonacciTests(unittest.TestCase):
+    def testOne(self):
+        self.assertEqual(fibonacci(4), 3)
 
 
 
