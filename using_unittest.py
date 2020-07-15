@@ -108,12 +108,42 @@ class isPalindromeTests(unittest.TestCase):
 
 
 def coins(change):
-    pass
+    if change <= 0:
+        return None
+
+    # create list to hold count of each denonimation, ordered: quarters, nickels, dimes, pennies
+    coins_count = []
+
+    # find max of each coin, adding count to coins_count after each round
+    for coin in [25, 10, 5]:
+        count = floor(change / coin)
+        coins_count.append(count)
+
+        change -= coin*count
+
+    # add what's left of change to coins_count as pennies
+    coins_count.append(change)
+
+    return coins_count
 
 class coinsTests(unittest.TestCase):
-    def testOne(self):
+    def testOne(self): # easy to test general use case
         self.assertEqual(coins(87), [3,1,0,2])
 
+    def testTwo(self): # negative input
+        self.assertEqual(coins(-3), None)
+
+    def testThree(self): # all quarters
+        self.assertEqual(coins(75), [3,0,0,0])
+    
+    def testFour(self): # all dimes
+        self.assertEqual(coins(20), [0,2,0,0])
+
+    def testFive(self): # all nickels
+        self.assertEqual(coins(5), [0,0,1,0])
+
+    def testSix(self): # all pennies
+        self.assertEqual(coins(4), [0,0,0,4])
 
 
 
