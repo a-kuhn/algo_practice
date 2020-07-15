@@ -16,8 +16,7 @@ class Store:
 
     def inflation(self, percent_increase):
         # increase price of each product
-        self.products = [p.update_price(percent_increase, True)
-                         for p in self.products]
+        self.products = [p.update_price(percent_increase, True) for p in self.products]
         return self
 
     def set_clearance(self, category, percent_discount):
