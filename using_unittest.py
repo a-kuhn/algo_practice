@@ -107,5 +107,18 @@ class isPalindromeTests(unittest.TestCase):
         self.assertFalse(isPalindrome('plijhba'))
 
 
+def coins(change):
+    pass
+
+class coinsTests(unittest.TestCase):
+    def testOne(self):
+        self.assertEqual(coins(87), [3,1,0,2])
+
+
+
+
+
+
+
 if __name__ == '__main__':
     unittest.main()
