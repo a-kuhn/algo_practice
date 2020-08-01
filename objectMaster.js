@@ -1,8 +1,6 @@
-/*
-Use map and filter to get data from immutable array
-*/
+//TODO: use map and filter to return desired data from pokemon object:
 
-const pokémon = Object.freeze([
+const pokemon = Object.freeze([
         { "id": 1,   "name": "Bulbasaur",  "types": ["poison", "grass"] },
         { "id": 5,   "name": "Charmeleon", "types": ["fire"] },
         { "id": 9,   "name": "Blastoise",  "types": ["water"] },
@@ -29,7 +27,8 @@ const pokémon = Object.freeze([
 ]);
 
 // an array of pokémon objects where the id is evenly divisible by 3
-
+const idDivisibleBy3 = pokemon.filter(p => p.id % 3 == 0);
+// idDivisibleBy3.map(p => console.log(`pokemon: ${p.name} \n  id: ${p.id} \n  id/3: ${p.id/3}\n`))
 
 // an array of pokémon objects that are "fire" type
 
