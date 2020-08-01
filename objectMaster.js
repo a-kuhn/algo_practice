@@ -43,7 +43,8 @@ const justNames = pokemon.map(p => p.name);
 // console.log(`justNames: ${justNames}`);
 
 //*5 an array with just the names of pokémon with an id greater than 99
-
+const justNamesIdOver99 = pokemon.filter(p => p.id > 99).map(p => p.name);
+// console.log(`justNamesIdOver99: ${justNamesIdOver99}`);
 
 //*6 an array with just the names of the pokémon whose only type is poison
 
