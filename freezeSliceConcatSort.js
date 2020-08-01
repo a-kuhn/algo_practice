@@ -46,7 +46,7 @@ const sortedGroceries = [...groceryList].sort( (a, b) => a.food > b.food );
 //! .map() used to replace for and while loops!
 // takes 2 args: an array and a callback function
 // map passes each element in array to callback function, returning new, manipulated array
-const groceries = ["pearl onions", "cremini mushrooms", "thyme"];
+const groceries = ["pearl onions", "cremini mushrooms", "thyme", "carrots", "spinach", "barley"];
 //  ****THIS ENTIRE BLOCK****
 /*
 const groceryList2 = [];
@@ -72,3 +72,8 @@ const evens = values.filter(num => num % 2 == 0);
 const odds = values.filter(num => num % 2 != 0);
 console.log(`evens: ${evens}`);
 console.log(`odds: ${odds}`);
+
+// works with strings too:
+const groceryList3 = groceries.filter(food => food.includes("o"));
+console.log(`groceryList3: ${groceryList3}`);
+
