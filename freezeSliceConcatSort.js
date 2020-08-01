@@ -77,3 +77,6 @@ console.log(`odds: ${odds}`);
 const groceryList3 = groceries.filter(food => food.includes("o"));
 console.log(`groceryList3: ${groceryList3}`);
 
+//! can chain methods together too:
+const oddCubes = values.filter(num => num % 2 != 0).map(num => num**3);
+console.log(`oddCubes: ${oddCubes}`);
