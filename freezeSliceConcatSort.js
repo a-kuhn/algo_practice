@@ -12,8 +12,28 @@ const thyme = {"item":"thyme", "haveIngredient":false};
 // groceryList.push(thyme) will NOT work because freeze made groceryList immutable
 // can use spreader (...) to make copy & then pop/push/etc
 const spreadList = [...groceryList, thyme];
+console.log(`\nspreadList:`);
 console.log(spreadList);
 // or .concat:
 const concatList = groceryList.concat(thyme);
+console.log(`\nconcatList:`);
 console.log(concatList);
+
+// Slice takes 1-2 parameters & returns array of elements w/ indexes btwn parameters. We can follow that up with a comma and a new object. Inside the new object we can use the spread operator to copy over the attributes from the Ingredient at index 5, and overwrite its haveIngredient key to be true.
+const gotTheThyme = [ ...concatList.slice(0, 5), { ...concatList[5], "haveIngredient": true } ];
+console.log(`\ngotTheThyme:`);
+console.log(gotTheThyme);
+
+// can also use slice to remove item:
+const notNeceCelery = [ ...gotTheThyme.slice(0, 2), ...gotTheThyme.slice(3) ];
+console.log(`\nnotNeceCelery:`);
+console.log(notNeceCelery);
+
+// sorting also does not work on frozen object
+const items = Object.freeze(["carrots", "onions", "celery", "mushrooms", "butter", "thyme"]);
+//items.sort(); //* this will throw an error 
+//need to spread & then sort:
+const sortedItems = [...items].sort();
+console.log(`\nsortedItems:`);
+console.log(sortedItems);
 
