@@ -39,7 +39,8 @@ const multipleTypes = pokemon.filter(p => p.types.length>1);
 // multipleTypes.map(p => console.log(`pokemon: ${p.name} \n  types: ${p.types}\n`))
 
 //*4 an array with just the names of the pokémon
-
+const justNames = pokemon.map(p => p.name);
+// console.log(`justNames: ${justNames}`);
 
 //*5 an array with just the names of pokémon with an id greater than 99
 
