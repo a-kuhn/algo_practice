@@ -65,3 +65,8 @@ const cubes = nums.map(num => num**3);
 console.log(`\ngroceryList2:`);
 console.log(groceryList2);
 console.log(`cubes: ${cubes}`);
+
+//! use .filter() to iterate through an array and return only elements that meet specified condition:
+const values = [1,2,3,4,5,6,7,8,9,10,11];
+const evens = values.filter(num => num % 2 == 0);
+console.log(`evens: ${evens}`);
