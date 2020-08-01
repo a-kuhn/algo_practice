@@ -58,6 +58,10 @@ for (let i=0; i<groceries.length; i++){
 */
 // **** replaced by: ****
 const groceryList2 = groceries.map(food => `<li>${food}</li>`);
+// another example:
+const nums = [1,2,3,4,5];
+const cubes = nums.map(num => num**3);
 
 console.log(`\ngroceryList2:`);
 console.log(groceryList2);
+console.log(`cubes: ${cubes}`);
