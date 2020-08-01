@@ -78,5 +78,6 @@ const groceryList3 = groceries.filter(food => food.includes("o"));
 console.log(`groceryList3: ${groceryList3}`);
 
 //! can chain methods together too:
+// filter will return array of odd nums, pass to map which returns array of cubed nums
 const oddCubes = values.filter(num => num % 2 != 0).map(num => num**3);
 console.log(`oddCubes: ${oddCubes}`);
