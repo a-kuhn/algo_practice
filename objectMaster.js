@@ -31,7 +31,8 @@ const idDivisibleBy3 = pokemon.filter(p => p.id % 3 == 0);
 // idDivisibleBy3.map(p => console.log(`pokemon: ${p.name} \n  id: ${p.id} \n  id/3: ${p.id/3}\n`))
 
 //*2 an array of pokémon objects that are "fire" type
-
+const fireTypes = pokemon.filter(p => p.types.includes("fire"));
+fireTypes.map(p => console.log(`pokemon: ${p.name} \n  types: ${p.types}\n`))
 
 //*3 an array of pokémon objects that have more than one type
 
