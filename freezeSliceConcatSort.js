@@ -40,3 +40,5 @@ console.log(sortedItems);
 // sorting by a key in an object:
 // if we want to sort by item, spread frozen groceryList, then call sort & pass in callback:
 const sortedGroceries = [...groceryList].sort( (a, b) => a.item > b.item );
+console.log(`\nsortedGroceries:\n`);
+console.log(sortedGroceries);
