@@ -26,26 +26,26 @@ const pokemon = Object.freeze([
         { "id": 148, "name": "Dragonair",  "types": ["dragon"] }
 ]);
 
-// an array of pokémon objects where the id is evenly divisible by 3
+//*1 an array of pokémon objects where the id is evenly divisible by 3
 const idDivisibleBy3 = pokemon.filter(p => p.id % 3 == 0);
 // idDivisibleBy3.map(p => console.log(`pokemon: ${p.name} \n  id: ${p.id} \n  id/3: ${p.id/3}\n`))
 
-// an array of pokémon objects that are "fire" type
+//*2 an array of pokémon objects that are "fire" type
 
 
-// an array of pokémon objects that have more than one type
+//*3 an array of pokémon objects that have more than one type
 
 
-// an array with just the names of the pokémon
+//*4 an array with just the names of the pokémon
 
 
-// an array with just the names of pokémon with an id greater than 99
+//*5 an array with just the names of pokémon with an id greater than 99
 
 
-// an array with just the names of the pokémon whose only type is poison
+//*6 an array with just the names of the pokémon whose only type is poison
 
 
-// an array containing just the first type of all the pokémon whose second type is "flying"
+//*7 an array containing just the first type of all the pokémon whose second type is "flying"
 
 
-// a count of the number of pokémon that are "normal" type
+//*8 a count of the number of pokémon that are "normal" type
