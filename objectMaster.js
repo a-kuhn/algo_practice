@@ -51,5 +51,7 @@ const justNamesPoison = pokemon.filter((p) => p.types.length < 2 && p.types.incl
 // console.log(`justNamesPoison: ${justNamesPoison}`);
 
 //*7 an array containing just the first type of all the pokémon whose second type is "flying"
+const firstType = pokemon.filter(p => p.types[1] == "flying").map(p => p.types[0]);
+console.log(`firstType: ${firstType}`);
 
 //*8 a count of the number of pokémon that are "normal" type
