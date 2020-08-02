@@ -21,7 +21,7 @@ counter();                 // this will console.log "4"
 // so that means that the count variable still exists! 
 // and it is being changed even though we aren't inside of the Outer function!
 // can we access count out here?
-console.log(count); // doesn't work!
+// console.log(count); // doesn't work!
 
 //! attempt at refactoring to arrow functions:
 const outerFunc = () => {
@@ -33,8 +33,9 @@ const outerFunc = () => {
     return inner;
 }
 
-const counterFun = outerFun();
+const counterFun = outerFunc();
 counterFun();
 counterFun();
 counterFun();
 counterFun();
+
