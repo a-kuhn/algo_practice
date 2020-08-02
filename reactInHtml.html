@@ -9,9 +9,14 @@
         <div id="root">
             <h1>First React page rendering...</h1>
         </div>
+        <div id="boot"></div>
         
+        <!-- load React -->
         <script crossorigin="" src="https://unpkg.com/react@16/umd/react.development.js"></script>
         <script crossorigin="" src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> 
+        <!-- load babel -->
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
         <!-- creating React component & adding it to the DOM: -->
         <script>
             // 3 args for React.createElement: type of element to create, props {}, children
@@ -20,5 +25,14 @@
             ReactDOM.render(App(), document.getElementById("root"));
         </script>
         
+        <!-- refactor above codeblock to JSX; Babel transpiler will convert to JavaScript in Browser -->
+        <!-- Your custom script here -->
+        <script type="text/babel">
+            // react functional component, Mapp()
+            const Mapp = () => <h1>Refactored component with JSX</h1>
+            // function call looks like an html tag
+            // react component tags ALWAYS capitalize first letter-- <Mapp/> not <mapp/>
+            ReactDOM.render(<Mapp/>, document.getElementById("boot"));
+        </script>
     </body>
 </html>
