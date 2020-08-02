@@ -15,9 +15,9 @@
         <!-- creating React component & adding it to the DOM: -->
         <script>
             // 3 args for React.createElement: type of element to create, props {}, children
-            const App = React.createElement("h1", {}, "Our First React page has rendered");
+            const App= () => React.createElement("h1", {}, "Our First React page has rendered");
             // telling react to render App component within document element with id="root"
-            ReactDOM.render(App, document.getElementById("root"));
+            ReactDOM.render(App(), document.getElementById("root"));
         </script>
         
     </body>
