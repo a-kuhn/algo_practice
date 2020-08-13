@@ -9,34 +9,38 @@ const fiveHeadsSync = () => {
     while (headsCount < 5) {
         let result = tossCoin();
         totalFlipsCount++;
-
         console.log(`result: ${result}`);
-
         result === "heads" ? headsCount++ : headsCount=0;
-
-        return `it took ${totalFlipsCount} tosses to get 5 heads in a row!`
     }
+    return `it took ${totalFlipsCount} tosses to get 5 heads in a row!`
 }
 
 // refactor fiveHeadsSync() using Promises (so the rest of the code can run async)
-const fiveHeadsPromise = new Promise((resolve, reject) => {
+const fiveHeadsPromise = () => {
+    return new Promise((resolve, reject) => {
     let headsCount = 0;
     let totalFlipsCount = 0;
 
-    if(headsCount < 5 && totalFlipsCount < 101) {
+    while (headsCount < 5 && totalFlipsCount < 100) {
         let result = tossCoin();
         totalFlipsCount++;
+        console.log(`result: ${result}`);
+        console.log(`   totalFlipsCount: ${totalFlipsCount}`);
         result === "heads" ? headsCount++ : headsCount=0;
-    }else {
-        reject(`100 flips and still no streak? this just isn't working out :(`)
+        console.log(`   headsCount: ${headsCount}`);
     }
-});
+
+    if(totalFlipsCount > 99){
+        reject(`100 flips and still no streak? this just isn't working out`)
+    } else {
+        resolve(`we got 5 heads in a row after ${totalFlipsCount} coin tosses`)
+    }
+})};
 
 
-fiveHeadsSync();
-fiveHeadsPromise
+// console.log(fiveHeadsSync());
+fiveHeadsPromise()
     .then(res => console.log(res))
     .catch(err => console.log(err));
 
-console.log(`this is running after the synchronous fiveHeadsSync() completes`);
 console.log(`this is running after fiveHeadsSync(), but not waiting for fiveHeadsPromise() to finish`);
